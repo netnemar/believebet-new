@@ -92,7 +92,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <link 
           rel="icon" 
           href={getAssetUrl('/believebet.png')} 
-          sizes="any" 
+          type="image/png"
         />
         <link 
           rel="apple-touch-icon" 
@@ -102,7 +102,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           rel="manifest" 
           href={getAssetUrl('/manifest.json')} 
         />
-        <meta name="theme-color" content="#FFFFFF" />
+        <meta name="theme-color" content="#7C3AED" />
       </head>
       <body className={cn(sora.variable, inter.variable, 'font-inter')}>
         <SolanaWalletProviderNoSSR>
