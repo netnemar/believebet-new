@@ -44,4 +44,4 @@ npm run dev
 
 ---
 
-**BelieveBet** — верь в свою удачу! 
+**BelieveBet** — верь в свою удачу! # believebet-new
