@@ -191,7 +191,7 @@ export default function TicketWheel() {
               }`}
             >
               <Image
-                src="/tails.png"
+                src="/assets/tails.png"
                 alt="Coin"
                 width={56}
                 height={56}

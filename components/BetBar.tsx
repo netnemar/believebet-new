@@ -411,7 +411,7 @@ export default function BetBar() {
                     }`}
                   >
                     <Image 
-                      src={s === 'heads' ? '/heads.png' : '/tails.png'}
+                      src={s === 'heads' ? '/assets/heads.png' : '/assets/tails.png'}
                       alt={s}
                       width={48}
                       height={48}
