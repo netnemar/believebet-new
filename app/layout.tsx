@@ -91,16 +91,16 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <meta name="description" content={metadata.description} />
         <link 
           rel="icon" 
-          href={getAssetUrl('/believebet.png')} 
+          href="/believebet.png" 
           type="image/png"
         />
         <link 
           rel="apple-touch-icon" 
-          href={getAssetUrl('/believebet.png')} 
+          href="/believebet.png" 
         />
         <link 
           rel="manifest" 
-          href={getAssetUrl('/manifest.json')} 
+          href="/manifest.json" 
         />
         <meta name="theme-color" content="#7C3AED" />
       </head>

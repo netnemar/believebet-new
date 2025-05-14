@@ -28,7 +28,7 @@ export default function SvgCoin({ side, spinning }: SvgCoinProps) {
       transition={{ duration: spinning ? 2 : 0.5, ease: 'easeInOut' }}
     >
       <Image
-        src={getAssetUrl(side === 'heads' ? '/heads.png' : '/tails.png')}
+        src={side === 'heads' ? '/heads.png' : '/tails.png'}
         alt={side === 'heads' ? 'Heads' : 'Tails'}
         fill
         priority
