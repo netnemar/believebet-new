@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Sora:wght@400;600;700&display=swap');
+@import './wallet.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  @apply scroll-smooth;
+}
+
+body {
+  @apply bg-bg-deep text-txt-main font-inter min-h-screen;
+  background: radial-gradient(600px circle at 50% -200px, #7C3AED55, #6C2BD7 80%);
+  position: relative;
+}
+
+/* Vaporwave grid background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(to right, rgba(255,255,255,0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: center center;
+  transform: perspective(500px) rotateX(60deg);
+  transform-origin: center bottom;
+  pointer-events: none;
+  z-index: -1;
+  animation: grid-move 15s linear infinite;
+}
+
+@keyframes grid-move {
+  0% {
+    background-position: center 0%;
+  }
+  100% {
+    background-position: center 100%;
+  }
+}
+
+/* Design system utility classes */
+.glass {
+  @apply bg-bg-glass backdrop-blur-md border border-white/5 rounded-2xl transition-all hover:border-white/10;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.glass-hover {
+  @apply transition-shadow;
+}
+
+.btn-primary {
+  @apply bg-accent text-bg-deep font-semibold px-4 py-2 rounded-lg hover:bg-accent-soft hover:scale-[1.03] active:scale-[0.98] transition-all disabled:opacity-50 disabled:hover:scale-100;
+}
+
+.btn-secondary {
+  @apply bg-bg-panel text-txt-main border border-white/10 px-4 py-2 rounded-lg hover:border-accent/20 hover:scale-[1.03] active:scale-[0.98] transition-all disabled:opacity-50 disabled:hover:scale-100;
+}
+
+.input-field {
+  @apply bg-bg-panel border border-white/10 p-2 rounded focus:outline-none focus:border-accent-soft transition-all;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #154C33;
+  border-radius: 9999px;
+} 
+
+/* Animations */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(30, 255, 166, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(30, 255, 166, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(30, 255, 166, 0.3);
+  }
+}
+
+.glow-effect {
+  animation: glow 3s infinite;
+} 

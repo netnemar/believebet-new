@@ -1,0 +1,19 @@
+{
+  "extends": ["next", "airbnb", "airbnb/hooks", "prettier"],
+  "plugins": ["@typescript-eslint"],
+  "parserOptions": {
+    "project": ["./tsconfig.json"],
+    "sourceType": "module"
+  },
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
+    "react/react-in-jsx-scope": "off",
+    "import/extensions": ["error", "ignorePackages", { "ts": "never", "tsx": "never" }],
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": ["**/*.test.tsx", "**/*.spec.tsx"] }]
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
+  }
+} 

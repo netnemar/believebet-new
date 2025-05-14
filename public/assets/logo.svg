@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <circle cx="32" cy="32" r="30" fill="#1EFFA6" stroke="#7BFFCE" stroke-width="4" />
+  <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-family="Sora, sans-serif" font-size="32" fill="#07150F">P</text>
+</svg> 

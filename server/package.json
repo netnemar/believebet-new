@@ -1,0 +1,28 @@
+{
+  "name": "pokets-payout-server",
+  "version": "1.0.0",
+  "description": "Payout server for Pokets platform",
+  "main": "payoutServer.js",
+  "scripts": {
+    "start": "node payoutServer.js",
+    "dev": "nodemon payoutServer.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Pokets Team <admin@pokets.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@solana/web3.js": "^1.75.0",
+    "bs58": "^5.0.0",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+} 
