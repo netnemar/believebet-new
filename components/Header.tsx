@@ -72,14 +72,6 @@ export default function Header() {
       <header className="h-[70px] w-full flex items-center justify-between px-6 bg-bg-panel shadow-mint/40 backdrop-blur-md relative z-20">
         {/* Левая часть – логотип */}
         <Link href="/" className="flex items-center gap-2 select-none">
-          <motion.div
-            className="relative w-8 h-8 overflow-hidden rounded-full"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            whileHover={{ rotate: 10 }}
-          >
-            <Image src={getAssetUrl('/believebet.png')} alt="BelieveBet" fill priority />
-          </motion.div>
           <span className="font-sora font-semibold text-lg">BelieveBet</span>
         </Link>
 

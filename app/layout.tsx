@@ -35,6 +35,11 @@ const TelegramNotifierNoSSR = dynamic(
 const metadata = {
   title: 'BelieveBet – Coin Flip dApp',
   description: 'Современный бело-фиолетовый CoinFlip dApp на Solana',
+  icons: {
+    icon: '/believebet.png',
+    shortcut: '/believebet.png',
+    apple: '/believebet.png',
+  }
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

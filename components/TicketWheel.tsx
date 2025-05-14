@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useJackpot } from '../store/jackpot';
 import toast from 'react-hot-toast';
+import Image from 'next/image';
 
 const ITEM_WIDTH = 64; // px including gap
 const VISIBLE_COUNT = 8;
@@ -180,9 +181,13 @@ export default function TicketWheel() {
                   : 'hover:scale-105'
               }`}
             >
-              <div className="w-full h-full bg-gradient-to-br from-mint to-mint/80 rounded-full flex items-center justify-center text-bg-deep font-semibold text-sm border border-mint/20">
-                {t.walletAddress ? t.walletAddress.slice(0, 2).toUpperCase() : '??'}
-              </div>
+              <Image
+                src="/tails.png"
+                alt="Coin"
+                width={56}
+                height={56}
+                className="w-full h-full object-contain"
+              />
             </div>
           ))}
         </motion.div>
