@@ -5,6 +5,7 @@ import { motion, useAnimation } from 'framer-motion';
 import { useJackpot } from '../store/jackpot';
 import toast from 'react-hot-toast';
 import Image from 'next/image';
+import { getAssetUrl } from '../lib/utils';
 
 const ITEM_WIDTH = 64; // px including gap
 const VISIBLE_COUNT = 8;
@@ -12,8 +13,16 @@ const WHEEL_WIDTH = ITEM_WIDTH * VISIBLE_COUNT;
 const MAX_SRC = 20;
 const MIN_DUPLICATE = 10; // Minimum number of duplications to ensure smooth animation
 
+interface Ticket {
+  id: string;
+  username: string;
+  avatar: string;
+  amount: number;
+  walletAddress?: string;
+}
+
 export default function TicketWheel() {
-  const { tickets, spinning, winnerTicket, lastWinners } = useJackpot((s) => ({
+  const { tickets, spinning, winnerTicket, lastWinners } = useJackpot((s: any) => ({
     tickets: s.tickets,
     spinning: s.spinning,
     winnerTicket: s.winnerTicket,
@@ -37,7 +46,7 @@ export default function TicketWheel() {
   const looped = useMemo(() => {
     // Use a placeholder if there are no tickets
     if (!hasTickets) {
-      const placeholder = {
+      const placeholder: Ticket = {
         id: 'placeholder',
         username: 'placeholder',
         avatar: '',
@@ -72,7 +81,7 @@ export default function TicketWheel() {
           duration: 20, 
           ease: 'linear', 
           repeat: Infinity,
-          repeatType: "loop" // Changed to loop for better animation
+          repeatType: "loop"
         } 
       });
       return;
@@ -89,7 +98,7 @@ export default function TicketWheel() {
           x: [0, -100, -50, -20, -80, 0],
           transition: {
             duration: 3,
-            ease: [0.2, 0.9, 0.8, 1.0], // Custom easing for realistic deceleration
+            ease: [0.2, 0.9, 0.8, 1.0],
           }
         }).then(() => {
           setHasAnimated(true);
@@ -109,7 +118,7 @@ export default function TicketWheel() {
       }
       
       // Find the index of the winner in the array
-      const ticketIndex = looped.findIndex(t => t.id === winnerTicket.id);
+      const ticketIndex = looped.findIndex((t: Ticket) => t.id === winnerTicket.id);
       if (ticketIndex !== -1) {
         // Calculate position to place the winner in the center
         const centerOffset = Math.floor(VISIBLE_COUNT / 2);
@@ -121,7 +130,7 @@ export default function TicketWheel() {
           x: targetPosition,
           transition: {
             duration: 5,
-            ease: [0.2, 0.9, 0.8, 1.0], // Custom easing for realistic deceleration
+            ease: [0.2, 0.9, 0.8, 1.0],
           }
         }).then(() => {
           setHasAnimated(true);
@@ -172,7 +181,7 @@ export default function TicketWheel() {
           className="flex gap-2 py-6 w-max px-4"
           animate={controls}
         >
-          {looped.map((t, index) => (
+          {looped.map((t: Ticket, index: number) => (
             <div
               key={`${t.id}-${index}`}
               className={`w-14 h-14 shrink-0 rounded-full overflow-hidden flex items-center justify-center drop-shadow-md transition-all duration-300 ${
